@@ -66,7 +66,7 @@ public class StackImp<TT> {
 		else{
 			
 		}
-		return false;
+		return true;
 	}
 	public boolean deleteAfter(Node<TT> element){
 		
