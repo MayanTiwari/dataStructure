@@ -58,38 +58,48 @@ public class StackImp<TT> {
 			return temp.data;
 		}
 	}
-	/*public boolean deleteAfter(Node<TT> element){
-		
-		//Head Case
-		if(this.Count > 0){
-			if(this.Count == 1){
-				//Only one element
-				if(this._head.data == element.data){
-					this._head = this.tail = null;
-					return true;			
-				}
-				else{
-					return false;
-				}
-			}
-			else{
-				if(this._head.data == element.data){
-					this._head = this._head.next;
-				}
-				if(this.tail.data == element.data){
-					
-				}
-				else{
-					
-				}
-			}
+	public boolean Add(TT data){
+		if(this._head == null){
+			this._head = new Node<TT>(data);
+			return true;
 		}
 		else{
-			return false;
+			
+		}
+		return false;
+	}
+	public boolean deleteAfter(Node<TT> element){
+		
+		Node<TT> currentElement = this._head;
+		//Head null case Case
+		if(this._head == null) return false;
+		//Element null case.
+		if(element == null) return false;
+		
+		//Head match element.
+		if(this._head.data.equals(element.data)){
+			this._head = this._head.next;
+			if(this._head.next == null){
+				this.tail = null;
+			}
+			return true;
 		}
 		
+		//Middle element 
+		while(currentElement != null && currentElement.next !=null){
+			if(currentElement.next.data.equals(element.data)){
+				currentElement.next = element.next;
+				if(element.next ==null){
+					this.tail = currentElement;
+				}
+				return true;
+			}
+			
+			currentElement = currentElement.next;
+		}
+		return false;
 		
-	}*/
+	}
 	public boolean insertAfter(Node<TT> element, TT data){
 		return false;
 	}

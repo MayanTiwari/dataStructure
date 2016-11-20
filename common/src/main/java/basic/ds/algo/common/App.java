@@ -15,6 +15,7 @@ public class App
         stack.push(70);
         stack.push(90);
         stack.push(100);
+        
         System.out.println("Pop" + stack.pop().toString());
         System.out.println("Pop" + stack.pop().toString());
         System.out.println("Pop" + stack.pop().toString());
