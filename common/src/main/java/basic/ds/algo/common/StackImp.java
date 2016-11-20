@@ -24,7 +24,7 @@ public class StackImp<TT> {
 	public Node<TT> getHead(){
 		return this._head;
 	}
-	
+	//STACK IMP
 	public boolean push(TT data){
 		
 		if(this._head == null){ 
@@ -40,7 +40,7 @@ public class StackImp<TT> {
 			return true;
 		}
 	}
-	//Get the last element 
+	//Get the last element STACK IMP 
 	public TT pop() {
 		
 		if(this._head == null){
@@ -57,50 +57,5 @@ public class StackImp<TT> {
 			Count--;
 			return temp.data;
 		}
-	}
-	public boolean Add(TT data){
-		if(this._head == null){
-			this._head = new Node<TT>(data);
-			return true;
-		}
-		else{
-			
-		}
-		return true;
-	}
-	public boolean deleteAfter(Node<TT> element){
-		
-		Node<TT> currentElement = this._head;
-		//Head null case Case
-		if(this._head == null) return false;
-		//Element null case.
-		if(element == null) return false;
-		
-		//Head match element.
-		if(this._head.data.equals(element.data)){
-			this._head = this._head.next;
-			if(this._head.next == null){
-				this.tail = null;
-			}
-			return true;
-		}
-		
-		//Middle element 
-		while(currentElement != null && currentElement.next !=null){
-			if(currentElement.next.data.equals(element.data)){
-				currentElement.next = element.next;
-				if(element.next ==null){
-					this.tail = currentElement;
-				}
-				return true;
-			}
-			
-			currentElement = currentElement.next;
-		}
-		return false;
-		
-	}
-	public boolean insertAfter(Node<TT> element, TT data){
-		return false;
 	}
 }
