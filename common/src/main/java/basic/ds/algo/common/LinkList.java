@@ -1,5 +1,6 @@
 package basic.ds.algo.common;
 
+
 public class LinkList<TT> {
 	public int Count = 0;
 
@@ -25,10 +26,7 @@ public class LinkList<TT> {
 	}
 
 	public boolean AddAfter(TT data) {
-
-		if (Count <= 0)
-			return false;
-
+		
 		if (data == null)
 			return false;
 
@@ -100,8 +98,40 @@ public class LinkList<TT> {
 		return false;
 
 	}
-
-	public boolean insertAfter(Node<TT> element, TT data) {
-		return false;
+	public boolean insertAtBegning(TT data){
+		if(this.head == null){ 
+			head = new Node<TT>(data);
+			Count++;
+			return true;
+		}
+		else{
+			Node<TT> temp = this.head;
+			this.head = new Node<TT>(data);
+			this.head.next = temp;
+			Count++;
+			return true;
+		}
+	}
+	
+	public TT getNthElementFromLast(int n){
+		Node<TT> currentNode;
+		Node<TT> nthElement ;
+		if(head == null ) return null ;
+		currentNode = head;
+		for(int i =0;i < n-1;i++){
+			if(currentNode.next !=null){
+				currentNode = currentNode.next;
+			}
+			else{
+				return null;
+			}
+		}
+		nthElement = head;
+		
+		while(currentNode.next != null){
+			currentNode = currentNode.next;
+			nthElement = nthElement.next;
+		}
+		return nthElement.data;
 	}
 }
