@@ -5,6 +5,7 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "Start" );
+        //Moving tests to junit
        /* StackImp<Integer> stack = new StackImp<Integer>();
         stack.push(10);
         stack.push(20);
@@ -23,7 +24,7 @@ public class App
         System.out.println("Pop" + stack.pop().toString());
         System.out.println(stack.Count);*/
         
-        LinkList<Integer> linkList = new LinkList<Integer>();
+       /* LinkList<Integer> linkList = new LinkList<Integer>();
         //linkList.AddAfter(null);
         
         linkList.insertAtBegning(10);
@@ -35,7 +36,7 @@ public class App
         linkList.insertAtBegning(70);
         
         Integer result = linkList.getNthElementFromLast(8);
-        System.out.println(result.toString());
+        System.out.println(result.toString());*/
         
        
         

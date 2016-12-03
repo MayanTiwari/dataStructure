@@ -1,5 +1,6 @@
 package basic.ds.algo.common;
 
+import java.util.spi.CurrencyNameProvider;
 
 public class LinkList<TT> {
 	public int Count = 0;
@@ -112,6 +113,37 @@ public class LinkList<TT> {
 			return true;
 		}
 	}
+	public boolean insertAtLast(TT data){
+		if(head == null){
+			head = new Node<TT>(data);
+			Count ++;
+			return true;
+		}
+		else{
+			Node<TT> current =head;
+			while(current.next !=null) current = current.next;
+			current.next = new Node<TT>(data);
+			Count ++;
+			return true;
+		}
+	}
+	
+	public boolean insertCircularAtLast(TT data){
+		if(head == null){
+			head = new Node<TT>(data);
+			Count ++;
+			head = head.next;
+			return true;
+		}
+		else{
+			Node<TT> current =head;
+			while(current.next !=null) current = current.next;
+			current.next = new Node<TT>(data);
+			Count ++;
+			current.next.next = head;
+			return true;
+		}
+	}
 	
 	public TT getNthElementFromLast(int n){
 		Node<TT> currentNode;
@@ -133,5 +165,22 @@ public class LinkList<TT> {
 			nthElement = nthElement.next;
 		}
 		return nthElement.data;
+	}
+	public boolean isLinkListCyclic(LinkList<TT> list){
+		if(list == null) return false;
+		Node<TT> slow = list.head;
+		Node<TT> fast = head.next;
+		//if(slow.next == null) return false;
+		fast = slow.next;
+		while(true){
+			if(fast == null || fast.next == null) return false;
+			else if(slow == fast || slow == fast.next){
+				return true;  
+			}
+			else{
+				slow  =slow.next;
+				fast = fast.next.next;
+			}
+		}
 	}
 }
