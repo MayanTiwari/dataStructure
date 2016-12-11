@@ -1,5 +1,15 @@
 basic/ds/algo/common/LinkList$Node.class
 basic/ds/algo/common/App.class
 basic/ds/algo/common/LinkList.class
+basic/ds/sorting/QuickSort.class
+basic/ds/tree/BinarySearchTree.class
+basic/ds/tree/BinarySearchTree$Node.class
+basic/ds/sorting/SelectionSort.class
+basic/ds/sorting/MergeSort.class
+basic/ds/tree/UnorderedMaxPQ.class
 basic/ds/algo/common/StackImp$Node.class
+helpers/Utils.class
+basic/ds/sorting/InsertionSort.class
+basic/ds/tree/MaxPQ.class
+basic/ds/sorting/SortClass.class
 basic/ds/algo/common/StackImp.class
