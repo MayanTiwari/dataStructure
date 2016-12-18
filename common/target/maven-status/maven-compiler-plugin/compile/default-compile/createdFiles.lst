@@ -11,5 +11,6 @@ basic/ds/algo/common/StackImp$Node.class
 helpers/Utils.class
 basic/ds/sorting/InsertionSort.class
 basic/ds/tree/MaxPQ.class
+basic/string/problems/StringProblems.class
 basic/ds/sorting/SortClass.class
 basic/ds/algo/common/StackImp.class
