@@ -6,8 +6,8 @@ public final class StringProblems {
 
 	private static final char DEFAULTCHAR = ' ';
 
-	public static char getFirstNonRepeatedChar(String inputString) {
-		char result = ' ';
+	public static char getFirstRepeatedChar(String inputString) {
+		char result = DEFAULTCHAR;
 
 		if (inputString.isEmpty())
 			return DEFAULTCHAR;
