@@ -27,7 +27,7 @@ public class StringProblemsTest extends TestCase {
 	 public void testFirstRepetedChar(){
 		String input  = "nnchal";
 		char result= StringProblems.getFirstRepeatedChar(input);
-		Assert.assertEquals('a', result);
+		Assert.assertEquals('n', result);
 	}
 
 }
