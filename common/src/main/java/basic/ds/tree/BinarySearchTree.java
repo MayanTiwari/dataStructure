@@ -26,7 +26,46 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		for (Key k : this.Keys()) {
 			result.append(k.toString());
 		}
+		result.append(" Height :").append(heightOfTree());
 		return result.toString();
+	}
+
+	public boolean heapifyBST(BinarySearchTree<Key, Value> bst) {
+		if (bst == null)
+			return false;
+		if (bst.root == null)
+			return false;
+
+		if (root.left != null)
+			heapify(root);
+		if (root.right != null)
+			heapify(root.right);
+
+		return true;
+	}
+
+	private void heapify(Node x) {
+		Node currentNode = x;
+		while (currentNode.left != null) {
+			if (currentNode.key.compareTo(currentNode.left.key) > 0)
+				swapNodes(x, x.left);
+			else
+				currentNode = currentNode.left;
+		}
+	}
+
+	private boolean swapNodes(Node x, Node y) {
+		if (x == null && y == null)
+			return false;
+		Node temp = x;
+		x.left = y.left;
+		x.right = y.right;
+		x.val = y.val;
+
+		y.left = temp.left;
+		y.right = temp.right;
+		y.val = temp.val;
+		return true;
 	}
 
 	public void put(Key key, Value val) {
@@ -37,13 +76,15 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 		return size(root);
 	}
 
-	public int heightOfTree(){
+	public int heightOfTree() {
 		return height(root);
 	}
+
 	public int height(Node x) {
 		if (x == null)
 			return 0;
-		else return 1 + Math.max(height(x.left), height(x.right));
+		else
+			return 1 + Math.max(height(x.left), height(x.right));
 	}
 
 	private int size(Node x) {
@@ -163,6 +204,14 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
 			return;
 		inorder(x.left, q);
 		q.enqueue(x.key);
+		inorder(x.right, q);
+	}
+
+	private void preOrder(Node x, MyQueue<Key> q) {
+		if (x == null)
+			return;
+		q.enqueue(x.key);
+		inorder(x.left, q);
 		inorder(x.right, q);
 	}
 }
