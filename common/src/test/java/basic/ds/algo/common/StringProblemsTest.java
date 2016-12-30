@@ -52,7 +52,7 @@ public class StringProblemsTest extends TestCase {
 		assertEquals(true, true);
 	}
 
-	public void testReverseWords() {
+/*	public void testReverseWords() {
 		String input = "the taj";
 		String result = StringProblems.reverseWords(input);
 		assertEquals(true, true);
@@ -67,6 +67,6 @@ public class StringProblemsTest extends TestCase {
 		String input = "mayan tiwari";
 		String result = StringProblems.reverseWordsInplace(input);
 		assertEquals(true,true);
-	}
+	}*/
 
 }
