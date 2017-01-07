@@ -3,7 +3,7 @@ import helpers.*;
 
 public class InsertionSort extends SortClass {
 
-	@Override
+	/*@Override
 	public int[] Sort(int[] a) {
 		int N = a.length;
 		for (int i = 0; i < N; i++) {
@@ -15,5 +15,12 @@ public class InsertionSort extends SortClass {
 			}
 		}
 		return a;
+	}*/
+	@Override
+	public int[] Sort(int[] a) {
+		for(int i =0 ; i < a.length ;i++){
+			
+		}
+		return null;
 	}
 }
