@@ -8,8 +8,10 @@ basic/ds/tree/BinarySearchTree$Node.class
 basic/ds/sorting/SelectionSort.class
 basic/ds/sorting/MergeSort.class
 basic/ds/tree/UnorderedMaxPQ.class
+basic/resursion/Combinations.class
 basic/ds/algo/common/StackImp$Node.class
 helpers/Utils.class
+basic/resursion/Permutations.class
 basic/ds/sorting/InsertionSort.class
 basic/ds/tree/MaxPQ.class
 basic/string/problems/StringProblems.class
