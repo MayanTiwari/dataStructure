@@ -1,58 +1,94 @@
 package basic.ds.sorting;
 
+import com.sun.scenario.effect.Merge;
 
 public class MergeSort extends SortClass {
-	
+
 	@Override
 	public int[] Sort(int[] a) {
 		int N = a.length;
 		int[] auxArray = new int[N];
-		//Copy Data.
-		for (int i=0 ; i <= N-1;i++){
-			auxArray[i]=a[i];
+		// Copy Data.
+		for (int i = 0; i <= N - 1; i++) {
+			auxArray[i] = a[i];
 		}
-		//_mergeSort(a, auxArray, 0, N-1);
+		// _mergeSort(a, auxArray, 0, N-1);
 		a = _bottonUpSort(a);
 		return a;
-		
-	}
-	private static void _mergeSort(int[] a,int[] auxArray, int low,int high){
 
-		if(high <= low) return ;
-		//Get the mid point.
-		//int N = high+1;
-		int mid = low + (high-low)/2;
-		_mergeSort(a,auxArray, low, mid);
-		_mergeSort(a,auxArray, mid+1, high);
-		//Merge
+	}
+
+	private static void _mergeSort(int[] a, int[] auxArray, int low, int high) {
+
+		if (high <= low)
+			return;
+		// Get the mid point.
+		// int N = high+1;
+		int mid = low + (high - low) / 2;
+		_mergeSort(a, auxArray, low, mid);
+		_mergeSort(a, auxArray, mid + 1, high);
+		// Merge
 		_merge(a, auxArray, low, mid, high);
 	}
-	private static void _merge(int[] a,int[] auxArray,int low,int mid ,int high){
-		  for (int k = low; k <= high; k++)
-			  auxArray[k] = a[k];
-		  
-		int j = mid+1;
+
+	private static void _merge(int[] a, int[] auxArray, int low, int mid, int high) {
+		for (int k = low; k <= high; k++)
+			auxArray[k] = a[k];
+
+		int j = mid + 1;
 		int i = low;
-		for (int k = low ; k <= high; k++){
-			if(i > mid) a[k] = auxArray[j++];
-			else if(j > high) a[k] = auxArray[i++]; 
-			else if(auxArray[j]< auxArray[i]) {
+		for (int k = low; k <= high; k++) {
+			if (i > mid)
 				a[k] = auxArray[j++];
-			}
-			else{
+			else if (j > high)
+				a[k] = auxArray[i++];
+			else if (auxArray[j] < auxArray[i]) {
+				a[k] = auxArray[j++];
+			} else {
 				a[k] = auxArray[i++];
 			}
 		}
 	}
-	//This is not working 
-	private static int[] _bottonUpSort(int a[]){
-		//Upper loop
+
+	// This is not working
+	private static int[] _bottonUpSort(int a[]) {
+		// Upper loop
 		int N = a.length;
-		int mid ;
-		for (int i =1; i < N; i = i*2 ){
-			mid = (i-1) + (i*2-1-i-1)/2;
-			_merge(a,a,i-1,mid,i*2-1);
+		int[] aux = new int[N];
+		for(int sz =1 ;sz < N;sz= sz+sz){
+			for(int lo =0;lo < N - sz; lo +=sz){
+				// merge
+				//_mergeSort()
+			}
 		}
 		return a;
+	}
+	// New practice------------------------------------------------------------
+
+	public void newMergeSort(int[] a, int[] aux, int low, int high) {
+		// Base case
+		if (low >= high) {
+			return;
+		}
+		int mid = low + (high - low) / 2;
+		newMergeSort(a, aux, low, mid);
+		newMergeSort(a, aux, mid + 1, high);
+
+		newMerge(a, aux, low, mid, high);
+	}
+
+	public static void newMerge(int[] a, int[] aux, int low, int mid, int high) {
+		int i = low;
+		int j = mid + 1;
+		for (int k = 0; k <= high; k++) {
+			if (i > mid)
+				aux[k] = a[j++];
+			else if (j > high)
+				aux[k] = a[i++];
+			else if (a[i] < a[j]) {
+				aux[k] = a[i++];
+			} else
+				aux[k] = a[j++];
+		}
 	}
 }
