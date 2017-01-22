@@ -12,8 +12,8 @@ public class MergeSort extends SortClass {
 		for (int i = 0; i <= N - 1; i++) {
 			auxArray[i] = a[i];
 		}
-		// _mergeSort(a, auxArray, 0, N-1);
-		a = _bottonUpSort(a);
+		_mergeSort(a, auxArray, 0, N - 1);
+		// a = _bottonUpSort(a);
 		return a;
 
 	}
@@ -52,13 +52,19 @@ public class MergeSort extends SortClass {
 
 	// This is not working
 	private static int[] _bottonUpSort(int a[]) {
+		int[] auxArray = new int[a.length];
+		// Copy Data.
+		for (int i = 0; i <= a.length - 1; i++) {
+			auxArray[i] = a[i];
+		}
 		// Upper loop
-		int N = a.length;
-		int[] aux = new int[N];
-		for(int sz =1 ;sz < N;sz= sz+sz){
-			for(int lo =0;lo < N - sz; lo +=sz){
-				// merge
-				//_mergeSort()
+		// this loop is for
+		for (int width = 1; width < a.length; width = width * 2) {
+			for (int i = 0; i < a.length; i = i + 2 * width) {
+				int low = i;
+				int mid = i + width;
+				int high = i + 2 * width;
+				_merge(a, auxArray, i, mid, high);
 			}
 		}
 		return a;

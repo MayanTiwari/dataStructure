@@ -1,6 +1,7 @@
 package basic.ds.algo.common;
 
 import basic.ds.sorting.MergeSort;
+import basic.ds.sorting.QuickSort;
 import basic.ds.sorting.SelectionSort;
 import basic.ds.sorting.SortClass;
 import junit.framework.Test;
@@ -41,11 +42,17 @@ public class SortingTest extends TestCase {
 		assertTrue(true);
 	}
 	public void testMergeSort(){
-		MergeSort s = new MergeSort();
+		//MergeSort s = new MergeSort();
 		int[] a = { 64, 25, 12, 22, 11 };
 		int[] aux = new int[a.length];
-		s.newMergeSort(a, aux, 0, a.length-1);
+		//s.newMergeSort(a, aux, 0, a.length-1);
 		System.out.println(aux.toString());
+		assertTrue(true);
+	}
+	public void testQuickSort(){
+		QuickSort s= new QuickSort();
+		int[] a = { 9, 4, 8, 14, 17,13 };
+		s.Sort(a);
 		assertTrue(true);
 	}
 }

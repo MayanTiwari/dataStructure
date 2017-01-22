@@ -50,5 +50,17 @@ public class SelectionSort extends SortClass {
 		}
 		return min;
 	}
+	//Stable Selection sort .
+	public void stableSort(int[] a){
+		for(int start = 0 ; start < a.length-1; ++start){
+			insert(a, start, findMinimum(a, start));
+		}
+	}
+	private void insert(int[] data,int start,int minIndex){
+		if(minIndex > start){
+			System.arraycopy(data, start, data, start + 1, minIndex - start);
+		}
+	
+	}
 	
 }
