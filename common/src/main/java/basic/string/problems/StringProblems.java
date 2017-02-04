@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Consumer;
 
 public final class StringProblems {
 
@@ -100,7 +101,8 @@ public final class StringProblems {
 		}
 		return new String(s, 0, dst);
 	}
-	//Not working
+
+	// Not working
 	public static String reverseWordsInplace(String inputString) {
 		char[] str = inputString.toCharArray();
 		reverseString(str, 0, str.length - 1);
@@ -194,5 +196,19 @@ public final class StringProblems {
 			b.append(temp[--i]);
 		}
 		return b.toString();
+	}
+
+	public void javaEightForEachLoop() {
+		List<Integer> intList = new ArrayList<Integer>();
+		intList.add(10);
+		intList.add(20);
+		intList.add(30);
+		intList.add(40);
+		intList.add(50);
+
+		
+		intList.stream().forEach( (i) -> { System.out.println(i); });
+		 
+		
 	}
 }
